@@ -18,10 +18,10 @@ class Task extends Model
     
     function priority()
     {
-        return $this->belongsTo(Priority::class);
+        return $this->belongsToMany(Priority::class);
     }
     function employee()
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsToMany(Employee::class);
     }
 }

@@ -20,6 +20,8 @@ class Employee extends Authenticatable
         'email',
         'phone',
         'avatar',
+        'password',
+        'address',
     ];
     protected $hidden = [
         'password',
@@ -34,6 +36,7 @@ class Employee extends Authenticatable
         return $this->belongsTo(JobTitle::class);
     }
     function tasks(){
-        return $this->hasMany(Task::class);
+        return $this->belongsToMany(Task::class);
+    
     }
 }

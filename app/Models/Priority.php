@@ -14,6 +14,6 @@ class Priority extends Model
     ];
     function tasks()
     {
-        return $this->hasMany(Task::class);
+        return $this->belongsToMany('priority_task');
     }
 }
