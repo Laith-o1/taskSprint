@@ -23,6 +23,9 @@ class prioritySeeder extends Seeder
                 'name' => 'Medium',
                 // 'description' => 'Medium priority',
             ],
+            // [
+            //     'name' => 'Normal',
+            // ],
             [
                 'name' => 'High',
                 // 'description' => 'High priority',

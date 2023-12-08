@@ -9,6 +9,7 @@ use App\Http\Controllers\employee\auth\AuthController as AuthAuthController;
 use App\Http\Controllers\employee\profile\CrudController as EmployeeProfileCrudController;
 use App\Http\Controllers\employee\task\CrudController as EmployeeTaskCrudController;
 use App\Http\Controllers\employee\task\FilterController as TaskFilterController;
+use App\Http\Controllers\example\exampleController;
 use App\Http\Controllers\shared\listsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -73,4 +74,5 @@ Route::group(['middleware'=>['auth:employee-api'], 'prefix' => 'employee/'], fun
 Route::group(['prefix' => 'shared/'], function() {
     Route::get('priorities', [listsController::class, 'Priorities'])->name('priorities');
     Route::get('statues', [listsController::class, 'Statues'])->name('statues');
+    Route::get('students',[exampleController::class,'mock'])->name('Showstudents');
 });
