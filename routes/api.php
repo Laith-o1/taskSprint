@@ -58,7 +58,7 @@ Route::group(['prefix' => 'employee/'], function() {
     Route::post('login', [AuthAuthController::class, 'login'])->name('login');
 });
 Route::group(['middleware'=>['auth:employee-api'], 'prefix' => 'employee/'], function() {
-    Route::post('logout', [AuthAuthController::class, 'logout'])->name('logout');
+    Route::get('logout', [AuthAuthController::class, 'logout'])->name('logout');
     Route::get('tasks', [EmployeeTaskCrudController::class, 'index'])->name('task.index');
     Route::post('task/update/{id}', [EmployeeTaskCrudController::class, 'update'])->name('task.update');
     // fitler tasks
